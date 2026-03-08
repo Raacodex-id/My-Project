@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+<div class="navigation">
+  <span class="brand">Raacodèx</span>
+
+ <button class="menu-toggle">☰</button>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="profile.html" class="active">Profile</a></li>
+  </ul>
+</div>
+
+<div class="content">
+
+<div class="card">
+  
+  <img src="img/profile.jpg" class="profile-pic">
+  <h2 class="profile-name">Raacodèx</h2>
+  <div class="profile-role">Web Developer Learner</div>
+  
+<h1>Profile</h1>
+<p>Nama: Raacodèx</p>
+<p>Status: Pelajar</p>
+<p>Sedang belajar membuat website dan coding.</p>
+
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Beginner</span>
+    <span>Dev</span>
+  </div>
+
+</div>
+
+<script>
+  let toggle = document.querySelector(".menu-toggle");
+  let menu = document.querySelector(".navigation ul");
+  toggle.onclick = function(){
+    menu.classList.toggle("show");
+    let nav = document.getElementById("navbar");
+    nav.classList.toggle("open");
+  };
+</script>
+
+  <script>
+const aboutSection = document.querySelector('#about');
+const skills = document.querySelectorAll('.skills li');
+const profilePic = document.querySelector('.about-image img');
+
+function showAbout() {
+  const triggerBottom = window.innerHeight * 0.85;
+  const aboutTop = aboutSection.getBoundingClientRect().top;
+
+  if(aboutTop < triggerBottom){
+    aboutSection.classList.add('scroll-show');
+    skills.forEach(skill => skill.style.opacity = '1');
+    profilePic.style.opacity = '1';
+  }
+}
+
+window.addEventListener('scroll', showAbout);
+window.addEventListener('load', showAbout);
+</script>
+
+
+</body>
+</html>
